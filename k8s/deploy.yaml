@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pv-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pv-demo
+  template:
+    metadata:
+      labels:
+        app: pv-demo
+    spec:
+      containers:
+      - name: pv-demo-container
+        image: nginx
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: my-storage
+        ports:
+        - containerPort: 80
+      volumes:
+      - name: my-storage
+        persistentVolumeClaim:
+          claimName: gke-pvc
