@@ -72,8 +72,6 @@ terraform apply
 
 This setup provides a basic example of using a Persistent Volume with Nginx on GKE. Modify the files and configurations as necessary to suit your project needs.
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
